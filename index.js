@@ -259,6 +259,8 @@ function InternetRelayChat(options) {
 				line.args.splice(0, 1);
 			}
 			
+			if (!self.whoisData[line.args[0]]) return;
+			
 			var data;
 			if(self.whoisData[line.args[0]]._updating) {
 				data = {"_updating": false, "away": false, "ircop": false, "channels": []};
